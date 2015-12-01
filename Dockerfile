@@ -1,9 +1,9 @@
 FROM busybox:ubuntu-14.04
-MAINTAINER CenturyLinkLabs
+MAINTAINER M2i3
 
 # Install ngrok
-ADD https://api.equinox.io/1/Applications/ap_pJSFC5wQYkAyI0FIVwKYs9h1hW/Updates/Asset/ngrok.zip?os=linux&arch=amd64&channel=stable /
-RUN unzip ngrok.zip -d /bin && \
+ADD https://dl.ngrok.com/ngrok_2.0.19_linux_amd64.zip /
+RUN unzip ngrok_2.0.19_linux_amd64.zip -d /bin && \
  rm -f ngrok.zip && \
  touch /.ngrok
 
