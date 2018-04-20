@@ -2,10 +2,12 @@ FROM busybox:ubuntu-14.04
 MAINTAINER M2i3
 
 # Install ngrok
-ADD https://dl.ngrok.com/ngrok_2.0.19_linux_amd64.zip /
-RUN unzip ngrok_2.0.19_linux_amd64.zip -d /bin && \
- rm -f ngrok.zip && \
- echo "web_addr: 0.0.0.0:4040" > /etc/ngrok.conf  
+ADD https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip /
+RUN unzip ngrok-stable-linux-amd64.zip -d /bin && \
+ rm -f ngrok-stable-linux-amd64.zip && \
+ echo "web_addr: 0.0.0.0:4040" > /etc/ngrok.conf
+
+EXPOSE 4040  
  
 EXPOSE 4040
 
